@@ -8,10 +8,10 @@
   <body>
     <h1>Episodes</h1>
     <% if (Array.isArray(episodes) && episodes.length > 0) { %>
-    <ul>
+    <ol>
       <% episodes.forEach(episode => { %>
       <li>
-        <a href="/watch/<%= episode.id %>"><%= episode.title %></a>
+        <a href="/watch/<%= episode.id %>"><%= episode.title?episode.title : "Episode" %></a>
       </li>
       <% }) %>
     </ul>
