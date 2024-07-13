@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>results</title>
+    <link rel="stylesheet" href="/results.css" />
+  </head>
+  <body>
+    <% result.forEach(item => { %>
+    <a href="/anime/<%= item.id %>">
+      <div class="card" anime-id="<%= item.id %>">
+        <img src="<%= item.image %>" alt="<%= item.title.userPreferred %>" />
+        <!-- <img src="https://picsum.photos/200/300" alt="<%= item.title.userPreferred %>" /> -->
+        <h2><%= item.title.userPreferred %></h2>
+      </div>
+    </a>
+    <% }) %>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+  box-shadow: 2px 2px 12px #aaa;
+  display: inline-block;
+  vertical-align: top;
+  width: 200px;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>episodes</title>
+  </head>
+  <body>
+    <h1>Episodes</h1>
+    <% if (Array.isArray(episodes) && episodes.length > 0) { %>
+    <ul>
+      <% episodes.forEach(episode => { %>
+      <li>
+        <a href="/watch/<%= episode.id %>"><%= episode.title %></a>
+      </li>
+      <% }) %>
+    </ul>
+    <% } else { %>
+    <p>No episodes available.</p>
+    <% } %>
+  </body>
+</html>

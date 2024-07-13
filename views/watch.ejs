@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watch</title>
+  </head>
+  <body>
+    <h1>Available Video Sources</h1>
+    <% if (Array.isArray(sources) && sources.length > 0) { %>
+    <ul>
+      <% sources.forEach(source => { %> <% if (source.isM3U8) { %>
+      <li>
+        <a href="vlc://<%= source.url %>"><%= source.quality %></a>
+      </li>
+      <% } %> <% }) %>
+    </ul>
+    <% } else { %>
+    <p>No sources available.</p>
+    <% } %>
+  </body>
+</html>
