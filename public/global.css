@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+h1 {
+    margin: 20px;
+}
+
+a:link {
+    color: paleturquoise;
+}
+
+a:visited {
+    color: palevioletred;
+}
