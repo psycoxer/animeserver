@@ -2,8 +2,12 @@
 import express from "express";
 import { META } from "@consumet/extensions";
 import _ from "lodash";
+import apicache from "apicache-plus";
 
 const app = express();
+
+app.use(apicache("5 minutes"));
+
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 const anilist = new META.Anilist();
