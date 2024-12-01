@@ -33,7 +33,8 @@ app.get("/anime/:selectedanimeid", (req, res) => {
     anilist.fetchAnimeInfo(animeid).then((data) => {
         // res.json(data);
         const episodes = data.episodes;
-        res.render("episodes", { episodes });
+        const title = data.title;
+        res.render("episodes", { title: title, episodes });
     });
 });
 

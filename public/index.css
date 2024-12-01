@@ -17,15 +17,13 @@ body {
 
 .search-container {
     text-align: center;
-    width: 100%;
-    max-width: 500px;
 }
 
 .search-bar {
     width: 70%;
     padding: 10px;
-    border: 2px solid #444444; /* Subtle border for dark mode */
-    border-radius: 4px 0 0 4px;
+    border: 2px solid #444;
+    border-radius: 4px;
     outline: none;
     font-size: 16px;
     background-color: #1e1e1e; /* Input background */
@@ -38,21 +36,88 @@ body {
 }
 
 .search-bar:focus {
-    border-color: #4caf50; /* Highlight color on focus */
+    border-color: palevioletred; /* Highlight color on focus */
     background-color: #2b2b2b; /* Slightly lighter background on focus */
 }
 
 .search-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #4caf50; /* Green button */
-    color: white;
-    border-radius: 0 4px 4px 0;
+    border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    padding: 10px 20px;
+    border: 2px solid #444;
+    background-color: black;
+    color: paleturquoise;
 }
 
 .search-button:hover {
-    background-color: #45a049; /* Slightly brighter green */
+    background-color: #222;
+}
+
+.favorites-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.favorites-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: palevioletred;
+}
+
+.favorites-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.favorites-list li {
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.favorites-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.favorites-list li a {
+    text-decoration: none;
+    color: #ffffff;
+    flex-grow: 1;
+    margin-right: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.remove-favorite {
+    background-color: palevioletred;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.remove-favorite:hover {
+    background-color: #d4315e;
+}
+
+.no-favorites {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #888;
 }

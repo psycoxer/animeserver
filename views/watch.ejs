@@ -3,21 +3,58 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>watch</title>
+        <title>Watch</title>
         <link rel="stylesheet" href="/global.css" />
+        <style>
+            .sources-container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+
+            ul li {
+                margin-bottom: 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            ul li:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+
+            ul li a {
+                text-decoration: none;
+                display: block;
+                padding: 5px 0;
+            }
+
+            .no-sources {
+                text-align: center;
+                margin-top: 50px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Available Video Sources</h1>
-        <% if (Array.isArray(sources) && sources.length > 0) { %>
-        <ul>
-            <% sources.forEach(source => { %> <% if (source.isM3U8) { %>
-            <li style="margin: 10px">
-                <a href="vlc://<%= source.url %>"><%= source.quality %></a>
-            </li>
-            <% } %> <% }) %>
-        </ul>
-        <% } else { %>
-        <p>No sources available.</p>
-        <% } %>
+        <div class="sources-container">
+            <h1>Available Video Sources</h1>
+            <% if (Array.isArray(sources) && sources.length > 0) { %>
+            <ul>
+                <% sources.forEach(source => { %> <% if (source.isM3U8) { %>
+                <li>
+                    <a href="vlc://<%= source.url %>"><%= source.quality %></a>
+                </li>
+                <% } %> <% }) %>
+            </ul>
+            <% } else { %>
+            <p class="no-sources">No sources available.</p>
+            <% } %>
+        </div>
     </body>
 </html>

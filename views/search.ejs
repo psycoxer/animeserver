@@ -4,19 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>results</title>
-        <link rel="stylesheet" href="/results.css" />
         <link rel="stylesheet" href="/global.css" />
+        <link rel="stylesheet" href="/results.css" />
     </head>
     <body>
-        <% result.forEach(item => { %>
-
-        <div class="card" anime-id="<%= item.id %>">
-            <a href="/anime/<%= item.id %>">
-                <img src="<%= item.image %>" alt="<%= item.title.userPreferred %>" />
-                <h2><%= item.title.userPreferred %></h2>
-            </a>
+        <div class="results-container">
+            <% result.forEach(item => { %>
+            <div class="card" anime-id="<%= item.id %>">
+                <a href="/anime/<%= item.id %>">
+                    <img src="<%= item.image %>" alt="<%= item.title.userPreferred %>" />
+                    <h2><%= item.title.userPreferred %></h2>
+                </a>
+            </div>
+            <% }) %>
         </div>
-
-        <% }) %>
     </body>
 </html>

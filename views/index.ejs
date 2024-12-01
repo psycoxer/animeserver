@@ -6,23 +6,36 @@
         <title>Amime</title>
         <link rel="stylesheet" href="/global.css" />
         <link rel="stylesheet" href="index.css" />
+        <script src="/fav.js"></script>
     </head>
     <body>
-        <div class="search-container">
-            <h1 style="font-size: 70px">anime.<span style="color: palevioletred">retro</span></h1>
-            <form action="/search" method="get" id="searchForm">
-                <!-- <label for="search">Search:</label> -->
-                <input
-                    type="text"
-                    id="search"
-                    name="search"
-                    placeholder="Search..."
-                    class="search-bar"
-                    required
-                />
-                <button type="submit" class="search-button">Search</button>
-            </form>
+        <div style="width: 100%; max-width: 500px">
+            <div class="search-container">
+                <h1 style="font-size: 70px">
+                    anime.<span style="color: palevioletred">retro</span>
+                </h1>
+                <form action="/search" method="get" id="searchForm">
+                    <!-- <label for="search">Search:</label> -->
+                    <input
+                        type="text"
+                        id="search"
+                        name="search"
+                        placeholder="Search..."
+                        class="search-bar"
+                        required
+                    />
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+            <div class="favorites-container">
+                <h1>Favorite Animes</h1>
+                <ul id="favoritesList" class="favorites-list"></ul>
+                <p id="noFavorites" class="no-favorites" style="display: none">
+                    No favorite animes yet.
+                </p>
+            </div>
         </div>
+
         <script src="/search.js"></script>
     </body>
 </html>

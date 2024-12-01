@@ -1,23 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>episodes</title>
-    <link rel="stylesheet" href="/global.css" />
-  </head>
-  <body>
-    <h1>Episodes</h1>
-    <% if (Array.isArray(episodes) && episodes.length > 0) { %>
-    <ol>
-      <% episodes.forEach(episode => { %>
-      <li style="margin: 15px;">
-        <a href="/watch/<%= episode.id %>"><%= episode.title?episode.title : "Episode" %></a>
-      </li>
-      <% }) %>
-    </ul>
-    <% } else { %>
-    <p>No episodes available.</p>
-    <% } %>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Episodes</title>
+        <link rel="stylesheet" href="/global.css" />
+        <script src="/fav.js"></script>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .episodes-container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            ol {
+                list-style-type: none;
+                padding: 0;
+                margin: 20px 0;
+            }
+
+            ol li {
+                margin-bottom: 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            ol li:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+
+            ol li a {
+                text-decoration: none;
+                display: block;
+                padding: 5px 0;
+            }
+
+            .no-episodes {
+                text-align: center;
+                margin-top: 50px;
+            }
+
+            .favorite-btn {
+                max-height: 50px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #1e1e1e;
+                color: white;
+                border: 2px solid palevioletred;
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-size: 1em;
+                font-weight: bold;
+                cursor: pointer;
+                outline: none;
+                transition: all 0.3s ease;
+            }
+
+            .favorite-btn:hover {
+                background-color: palevioletred;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="episodes-container">
+            <h1 style="margin-left: 0px"><%= title.romaji %></h1>
+            <div style="display: flex; justify-content: space-between; align-items: center">
+                <h2 style="color: gray; margin-left: 0px">Episodes</h2>
+                <button class="favorite-btn" onclick="favoriteAnime(`<%= title.romaji %>`)">
+                    Favorite ♡
+                </button>
+            </div>
+            <% if (Array.isArray(episodes) && episodes.length > 0) { %>
+            <ol>
+                <% episodes.forEach(episode => { %>
+                <li>
+                    <a href="/watch/<%= episode.id %>"
+                        ><%= episode.title ? episode.title : "Episode" %></a
+                    >
+                </li>
+                <% }) %>
+            </ol>
+            <% } else { %>
+            <p class="no-episodes">No episodes available.</p>
+            <% } %>
+        </div>
+    </body>
 </html>
