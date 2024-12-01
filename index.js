@@ -6,7 +6,14 @@ import apicache from "apicache-plus";
 
 const app = express();
 
-app.use(apicache("5 minutes"));
+app.use(
+    apicache("5 minutes", {
+        headers: {
+            "content-encoding": "br",
+            // debug: true,
+        },
+    })
+);
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
